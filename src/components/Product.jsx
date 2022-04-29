@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useRef} from 'react'
+
 import Card from '@mui/material/Card'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
@@ -6,6 +7,8 @@ import Button from '@mui/material/Button'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export default function Product({ product, addToCart }) {
+
+    let quantity = useRef(1)
 
     return (
         <div>
@@ -25,7 +28,7 @@ export default function Product({ product, addToCart }) {
                     <MenuItem value={9}>9</MenuItem>
 
                 </Select>
-                <Button onClick={() => addToCart()}
+                <Button onClick={() => addToCart(product, quantity.current)}
                     variant="contained"
                     startIcon={<AddShoppingCartIcon />}>
                     Add to cart</Button>
