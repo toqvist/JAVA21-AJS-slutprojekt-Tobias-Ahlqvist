@@ -6,10 +6,14 @@ export function CartProvider({ children }) {
 
     const [cart, setCart] = useState([])
 
-    const addToCart = (product, quantity) => {
+    const addToCart = (product, newQuantity) => {
         //Make a copy of the current cart with the spread operator, 
         //append the new product at the end 
-        setCart([...cart, product])
+        let productToAdd = {
+            ...product,
+            quantity: newQuantity
+        }
+        setCart([...cart, productToAdd])
     }
 
     const removeFromCart = (product, quantity) => {

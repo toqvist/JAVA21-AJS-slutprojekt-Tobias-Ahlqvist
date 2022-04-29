@@ -1,25 +1,26 @@
+
 import React, { useContext } from 'react'
 import CartContext from '../contexts/CartContext';
+import CartItem from './CartItem';
 
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import Grid from '@mui/material/Grid';
+
 
 
 export default function Cart() {
 
-  const {cart, setQuantity, removeFromCart} = useContext(CartContext);
+  const { cart, setQuantity, removeFromCart } = useContext(CartContext);
 
   return (
-    <div>
-      <h1>Cart</h1>
-      {cart.map(product =>
-        <div key={product.id}>
-          <h2>{product.name}</h2>
-          <p>€{product.price}</p>
-        </div>
-      )
-      }
+    <>
+      <Grid>
+        {cart.map(product =>
+          <Grid key={product.id}>
+            <CartItem product={product} setQuantity={setQuantity} removeFromCart={removeFromCart} />
+          </Grid>
+        )}
+      </Grid>
+    </>
 
-    </div>
   )
 }
