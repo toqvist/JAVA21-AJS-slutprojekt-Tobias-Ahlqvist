@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Product from './Product'
+import ProductsContext from '../contexts/ProductsContext'
 
 import Grid from '@mui/material/Grid'
 
 export default function Shop() {
 
-  const products = [{ id: 1000, name: "Cap", price: 10 }, { id: 1002, name: "Sneakers", price: 75 }, { id: 1003, name: "Shirt", price: 13 }]
+  const products = useContext(ProductsContext);
 
   return (
     <div>
