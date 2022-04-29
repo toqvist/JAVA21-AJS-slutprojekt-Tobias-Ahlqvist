@@ -13,7 +13,6 @@ export default function MiniCart() {
         <Button variant="outlined"
             startIcon={<ShoppingCartIcon></ShoppingCartIcon>}>
             {cartItems}
-            
         </Button>
     )
 }
