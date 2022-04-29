@@ -5,6 +5,7 @@ export default function Product({ product }) {
     return (
         <div>
             <Card variant="outlined">
+                <img width= "125px" src={product.img}/>
                 <h2>{product.name}</h2>
                 <p>{product.price}</p>
                 

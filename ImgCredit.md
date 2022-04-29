@@ -1,0 +1,6 @@
+[Jeans](https://www.svgrepo.com/svg/401998/jeans)
+[Jacket](https://www.svgrepo.com/svg/81457/jacket)
+[Cap](https://www.svgrepo.com/svg/106876/cap)
+[Sneakers](https://www.svgrepo.com/svg/273253/sneakers)
+[Shirt](https://www.svgrepo.com/svg/17453/shirt)
+[Scarf](https://www.svgrepo.com/svg/407383/scarf)
