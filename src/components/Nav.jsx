@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
+import MiniCart from './MiniCart'
 
 export default function Nav() {
+
   return (
     <nav>
       <Link to='/'>
@@ -11,6 +13,7 @@ export default function Nav() {
       <Link to='/cart'>
         Cart
       </Link>
+      <MiniCart />
     </nav >
   )
 }

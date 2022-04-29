@@ -5,6 +5,7 @@ const CartContext = createContext()
 export function CartProvider({ children }) {
 
     const [cart, setCart] = useState([])
+    const [cartItems, setCartItems] = useState(0)
 
     const addToCart = (product, newQuantity) => {
 
@@ -15,7 +16,7 @@ export function CartProvider({ children }) {
         if (productIndex >= 0) {
             const newCart = [...cart]
             newCart[productIndex].quantity += newQuantity
-            setCart(newCart)
+            updateCart(newCart)
             return
         }
 
@@ -23,7 +24,7 @@ export function CartProvider({ children }) {
             ...product,
             quantity: newQuantity
         }
-        setCart([...cart, productToAdd])
+        updateCart([...cart, productToAdd])
     }
 
     const removeFromCart = (product, newQuantity) => {
@@ -40,18 +41,34 @@ export function CartProvider({ children }) {
         if (cart[productIndex].quantity - newQuantity <= 0) {
             //Create a new cart by filtering out the product to be removed
             const newCart = cart.filter(prod => prod.id !== product.id)
-            setCart(newCart)
+            updateCart(newCart)
             return
         }
         
         //IOtherwise, subtract the entered quantity
         const newCart = [...cart]
         newCart[productIndex].quantity -= newQuantity
+        updateCart(newCart)
+    }
+
+    //Helper function that is equal to setCart(), 
+    //but will also update the cartItems array to reflect new quantity
+    function updateCart(newCart) {
+        let newCartItems = 0
+        for (let i = 0; i < newCart.length; i++) {
+            newCartItems += newCart[i].quantity
+        }
         setCart(newCart)
+        setCartItems(newCartItems)
+    }
+
+    function updateCartItems () {
+        //For each product in cart, add the quantity to the cartItems 
+        
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, cartItems, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     )

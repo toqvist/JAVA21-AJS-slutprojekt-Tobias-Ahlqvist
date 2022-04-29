@@ -1,5 +1,6 @@
 
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import CartContext from '../contexts/CartContext';
 import CartItem from './CartItem';
 
@@ -13,13 +14,21 @@ export default function Cart() {
 
   return (
     <>
-      <Grid>
-        {cart.map(product =>
-          <Grid key={product.id}>
-            <CartItem product={product} addToCart={addToCart} removeFromCart={removeFromCart} />
-          </Grid>
-        )}
-      </Grid>
+      {cart.length ?
+        <Grid>
+          {cart.map(product =>
+            <Grid key={product.id}>
+              <CartItem product={product} addToCart={addToCart} removeFromCart={removeFromCart} />
+            </Grid>
+          )}
+        </Grid>
+        : <>
+          <p>Cart is empty!</p>
+          <Link to="/">Go to shop</Link>
+        </>
+      }
+
+
     </>
 
   )
