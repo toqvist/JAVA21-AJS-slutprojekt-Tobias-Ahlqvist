@@ -7,13 +7,23 @@ export function CartProvider({ children }) {
     const [cart, setCart] = useState([])
 
     const addToCart = (product, newQuantity) => {
-        //Make a copy of the current cart with the spread operator, 
-        //append the new product at the end 
+        
+        //Check if product with same id already exists
+        const productIndex = cart.findIndex(item => item.id === product.id)
+
+        //If product already exists, update its quantity
+        if(productIndex >= 0) {
+            const newCart = [...cart]
+            newCart[productIndex].quantity += newQuantity 
+            setCart(newCart)
+            return
+        }
+
         let productToAdd = {
             ...product,
             quantity: newQuantity
         }
-        setCart([...cart, productToAdd])
+        setCart([...cart, productToAdd])    
     }
 
     const removeFromCart = (product, quantity) => {
