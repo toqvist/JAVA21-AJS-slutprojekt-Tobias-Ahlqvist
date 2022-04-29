@@ -4,3 +4,6 @@
 [Sneakers](https://www.svgrepo.com/svg/273253/sneakers)
 [Shirt](https://www.svgrepo.com/svg/17453/shirt)
 [Scarf](https://www.svgrepo.com/svg/407383/scarf)
+[Gloves](https://www.svgrepo.com/svg/66744/boxing)
+[Hoodie](https://www.svgrepo.com/svg/274934/hoodie)
+[Socks](https://www.svgrepo.com/svg/407490/socks)
