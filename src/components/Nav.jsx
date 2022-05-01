@@ -1,14 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import MiniCart from './MiniCart'
 import Login from './Login'
 import UserContext from '../contexts/UserContext'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
 
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+import Link from '@mui/material/Link'
 
 export default function Nav() {
 
@@ -16,24 +18,37 @@ export default function Nav() {
 
   return (
 
-    <AppBar position="fixed" className="nav" sx={{backgroundColor: 'white' }}>
+    <AppBar position="fixed" className="nav"
+      sx={{backgroundColor: 'white', color: 'black'}}>
+      <Toolbar sx={{display: 'flex', justifyContent: 'space-around'}} >
 
-      <Toolbar>
-        <Link to='/'>
+
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ mr: 2, fontWeight: 'bold' }}>
+          WebShop
+        </Typography>
+
+        <RouterLink to='/'>
           Shop
-        </Link>
+        </RouterLink>
 
-        <Link to='/cart'>
-          Cart
-        </Link>
+
 
         {user.loggedIn ?
           <>
+            <RouterLink to='/cart'>
+              Cart
+            </RouterLink>
+
             <MiniCart />
           </>
           :
           <Login />
         }
+
       </Toolbar>
     </AppBar>
   )
