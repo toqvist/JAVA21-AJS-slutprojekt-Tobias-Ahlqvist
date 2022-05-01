@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 
 export default function Cart() {
 
-  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function Cart() {
         <Grid>
           {cart.map(product =>
             <Grid key={product.id}>
-              <CartItem product={product} addToCart={addToCart} removeFromCart={removeFromCart} />
+              <CartItem product={product} />
             </Grid>
           )}
         </Grid>

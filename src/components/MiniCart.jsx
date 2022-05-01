@@ -42,8 +42,7 @@ export default function MiniCart() {
                                 <CartItem
                                     key={product.id}
                                     product={product}
-                                    addToCart={addToCart}
-                                    removeFromCart={removeFromCart} />
+                                    />
                             )}
                         </Box>
                     </Card>
