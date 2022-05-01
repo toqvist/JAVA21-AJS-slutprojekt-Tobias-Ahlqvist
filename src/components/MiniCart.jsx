@@ -10,7 +10,7 @@ export default function MiniCart() {
     const { cartItems } = useContext(CartContext);
 
     return (
-        <Button variant="outlined"
+        <Button variant="outlined" 
             startIcon={<ShoppingCartIcon></ShoppingCartIcon>}>
             {cartItems}
         </Button>

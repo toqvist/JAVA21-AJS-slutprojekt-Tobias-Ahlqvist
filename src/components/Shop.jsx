@@ -10,22 +10,20 @@ export default function Shop() {
 
   const products = useContext(ProductsContext);
 
-  const {addToCart} = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
 
 
   return (
-    <div>
-      <h1>Shop</h1>
-      <Box paddingY={1} paddingX={3}>
-        <Grid container spacing={2} >
-          {products.map(product =>
-            <Grid  item key={product.id} xs={12} sm={6} md={4}>
-              <Product product={product} addToCart={addToCart} />
-            </Grid>
-          )}
-        </Grid>
-      </Box>
-      {/* <button onClick={() => addToCart()}>butt</button> */}
-    </div>
+
+    <Box paddingY={3} paddingX={3} sx={{ maxWidth: 1000, display: 'flex', margin: 'auto' }} >
+      <Grid container spacing={2} >
+        {products.map(product =>
+          <Grid item key={product.id} xs={12} sm={6} md={4}>
+            <Product product={product} addToCart={addToCart} />
+          </Grid>
+        )}
+      </Grid>
+    </Box>
+
   )
 }

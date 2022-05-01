@@ -7,6 +7,8 @@ import { ProductsProvider } from './contexts/ProductsContext';
 import { CartProvider } from './contexts/CartContext'
 import { UserProvider } from './contexts/UserContext'
 
+import Box from '@mui/material/Box'
+
 function App() {
 
   return (
@@ -17,14 +19,20 @@ function App() {
         <CartProvider>
           <UserProvider>
 
+
             <Router>
               <Nav />
-              <Routes>
-                <Route path='/' element={<Shop />} />
-                <Route path='/cart' element={<Cart />} />
-              </Routes>
-            </Router>
+
+              <Box marginTop={8}>
+                <Routes>
+                  <Route path='/' element={<Shop />} />
+                  <Route path='/cart' element={<Cart />} />
+                </Routes>
+              </Box>
             
+            </Router>
+
+
           </UserProvider>
         </CartProvider>
       </ProductsProvider>
