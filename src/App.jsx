@@ -25,7 +25,8 @@ function App() {
           <UserProvider>
             <WebShopStorage/>
 
-            <Router>
+            <Router basename="/JAVA21-AJS-slutprojekt-Tobias-Ahlqvist/">
+              
               <Nav />
 
               <Box marginTop={8}>
