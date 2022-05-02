@@ -3,6 +3,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import MiniCart from './MiniCart'
 import Login from './Login'
+import Logout from './Logout'
 import UserContext from '../contexts/UserContext'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -37,13 +38,15 @@ export default function Nav() {
 
 
 
-        {user.loggedIn ?
+        {user ?
           <>
             <RouterLink to='/cart'>
               Cart
             </RouterLink>
 
             <MiniCart />
+
+            <Logout/>
           </>
           :
           <Login />
