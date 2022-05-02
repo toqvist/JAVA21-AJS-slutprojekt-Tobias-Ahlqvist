@@ -35,6 +35,7 @@ export default function Login() {
                             variant="outlined"
                             label="Username"
                             onChange={(e) => username.current = e.target.value}
+                            onKeyDown={ (e) => e.key === 'Enter' && login(username.current) }
                         />
                         <div>
                             <Button
