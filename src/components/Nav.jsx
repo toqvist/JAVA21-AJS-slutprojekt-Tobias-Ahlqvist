@@ -20,16 +20,17 @@ export default function Nav() {
 
   return (
 
-    <AppBar position="fixed" className="nav"
-      sx={{backgroundColor: 'white', color: 'black'}}>
-      <Toolbar sx={{display: 'flex', justifyContent: 'space-around'}} >
+    <AppBar position="fixed"
+      sx={{ backgroundColor: 'white', color: 'black' }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }} >
 
 
         <Typography
           variant="h6"
           noWrap
           component="div"
-          sx={{ mr: 2, fontWeight: 'bold' }}>
+          sx={{ mr: 2, fontWeight: 'bold', display: { xs: 'none', md: 'block' } }}
+          >
           WebShop
         </Typography>
 
@@ -47,10 +48,10 @@ export default function Nav() {
 
             <MiniCart />
 
-            <Logout/>
+            <Logout />
           </>
           :
-          <Login />
+            <Login />
         }
 
       </Toolbar>
