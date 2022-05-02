@@ -32,8 +32,8 @@ export default function MiniCart() {
                     onClose={() => setModal(false)}>
                     <Card>
 
-                        <Box>
-                            <IconButton onClick={() => setModal(false)}>
+                        <Box sx={{margin: '1rem 4rem', display: 'flex', justifyContent: 'flex-end'}}>
+                            <IconButton onClick={() => setModal(false)} >
                                 <CloseIcon></CloseIcon>
                             </IconButton>
                         </Box>

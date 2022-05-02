@@ -22,7 +22,7 @@ export default function Product({ product, addToCart }) {
 
     return (
         <Card variant="outlined">
-            <Box sx={{ maxWidth: 340, display:'flex', justifyContent: 'center', mt: '10%'}}>
+            <Box sx={{ maxWidth: 340, display:'flex', justifyContent: 'center', mt: '10%', ml: '10%'}}>
                 <CardMedia
                     style={{ height: 125, width: 125 }}
                     component="img"
@@ -36,7 +36,7 @@ export default function Product({ product, addToCart }) {
             </Typography>
 
             <CardActions>
-                <Container className="add-to-cart" >
+                <Container sx={{ display: 'flex', justifyContent: 'center'}}>
                     <Select defaultValue={1} className="select" sx={{maxHeight: '2.5rem'}}>
                         <MenuItem value={1}>1</MenuItem>
                         <MenuItem value={2}>2</MenuItem>
@@ -51,7 +51,7 @@ export default function Product({ product, addToCart }) {
                     <Button onClick={() => addToCart(product, quantity.current)}
                         variant="contained"
                         startIcon={<AddShoppingCartIcon />}
-                        sx={{transform:' translateY(-45%)'}}>
+                        >
                         Add to cart</Button>
                 </Container>
             </CardActions>
