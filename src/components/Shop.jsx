@@ -2,15 +2,16 @@ import React, { useContext } from 'react'
 import Product from './Product'
 import ProductsContext from '../contexts/ProductsContext'
 import CartContext from '../contexts/CartContext'
+import UserContext from '../contexts/UserContext'
 
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 
 export default function Shop() {
 
-  const products = useContext(ProductsContext);
-
+  const products = useContext(ProductsContext)
   const { addToCart } = useContext(CartContext)
+  const { user } = useContext(UserContext)
 
 
   return (
@@ -19,7 +20,7 @@ export default function Shop() {
       <Grid container spacing={2} >
         {products.map(product =>
           <Grid item key={product.id} xs={12} sm={6} md={4}>
-            <Product product={product} addToCart={addToCart} />
+            <Product product={product} addToCart={addToCart} user={user} />
           </Grid>
         )}
       </Grid>
