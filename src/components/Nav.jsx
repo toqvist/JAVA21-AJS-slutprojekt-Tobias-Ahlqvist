@@ -5,6 +5,7 @@ import MiniCart from './MiniCart'
 import Login from './Login'
 import Logout from './Logout'
 import UserContext from '../contexts/UserContext'
+
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'

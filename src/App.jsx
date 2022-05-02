@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Shop from './components/Shop'
 import Cart from './components/Cart'
@@ -6,11 +6,16 @@ import Nav from './components/Nav'
 import { ProductsProvider } from './contexts/ProductsContext';
 import { CartProvider } from './contexts/CartContext'
 import { UserProvider } from './contexts/UserContext'
+import WebShopStorage from './components/WebShopStorage'
 
 import Box from '@mui/material/Box'
+import CartContext from './contexts/CartContext'
+import UserContext from './contexts/UserContext'
+
 
 function App() {
 
+ 
   return (
     <div className="App">
 
@@ -18,7 +23,7 @@ function App() {
       <ProductsProvider>
         <CartProvider>
           <UserProvider>
-
+            <WebShopStorage/>
 
             <Router>
               <Nav />

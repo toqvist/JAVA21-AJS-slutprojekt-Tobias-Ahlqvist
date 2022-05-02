@@ -14,7 +14,7 @@ import Card from '@mui/material/Card'
 
 export default function MiniCart() {
 
-    const { cart, cartItems, addToCart, removeFromCart } = useContext(CartContext);
+    const { cart, cartItems } = useContext(CartContext);
     const [modal, setModal] = useState(false);
 
     return (
