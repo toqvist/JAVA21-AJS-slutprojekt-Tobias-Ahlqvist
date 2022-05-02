@@ -38,7 +38,8 @@ export default function Product({ product, addToCart, user }) {
             {user ?
                 <CardActions>
                     <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Select defaultValue={1} className="select" sx={{ maxHeight: '2.5rem' }}>
+                        <Select defaultValue={1} sx={{ maxHeight: '2.5rem' }}
+                        onChange={ (e) => quantity.current = e.target.value }>
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
                             <MenuItem value={3}>3</MenuItem>
