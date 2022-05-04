@@ -15,7 +15,8 @@ export default function Shop() {
 
 
   return (
-
+    
+    // Iterate over each product in the provided products list. Return a Product component for each product
     <Box paddingY={3} paddingX={3} sx={{ maxWidth: 1000, display: 'flex', margin: 'auto' }} >
       <Grid container spacing={2} >
         {products.map(product =>

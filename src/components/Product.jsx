@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import Grid from '@mui/material/Grid'
 
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
@@ -11,13 +10,13 @@ import Typography from '@mui/material/Typography'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import CardActions from '@mui/material/CardActions'
 
 
 export default function Product({ product, addToCart, user }) {
 
+    //Quantity of the product to be added to the cart
     let quantity = useRef(1)
 
     return (

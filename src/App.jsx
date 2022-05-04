@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Shop from './components/Shop'
 import Cart from './components/Cart'
@@ -9,9 +9,21 @@ import { UserProvider } from './contexts/UserContext'
 import WebShopStorage from './components/WebShopStorage'
 
 import Box from '@mui/material/Box'
-import CartContext from './contexts/CartContext'
-import UserContext from './contexts/UserContext'
 
+// This project uses Material-UI to style components, MUI components are imported from @mui/material
+// Custom styling for MUI components is done by adding a sx prop to the component
+
+// React router is used to route between components,  the routes are defined in the Routes component's children
+// The 'Link' component, in the Nav component is used to link to other components, for the Router
+
+// The cart state is stored in cart context, which the CartProvider then provides. 
+
+// User login/logout state is handled in UserContext
+// What user is currently logged in does not matter, the same cart is loaded as long as a user exists
+// The cart and user is stored in local storage. This is done in the useEffect(), in the WebShopStorage component
+
+// The products and their information are defined in the ProductsContext
+// These are used by the Shop component to display the products with the Product component
 
 function App() {
 

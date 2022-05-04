@@ -7,6 +7,9 @@ import Button from '@mui/material/Button'
 
 import UserContext from '../contexts/UserContext'
 
+
+//The content to be displayed in the Login modal.
+// Modal state is handled in the Nav (or other parent component)
 export default function LoginModal() {
     const { login } = useContext(UserContext)
 
