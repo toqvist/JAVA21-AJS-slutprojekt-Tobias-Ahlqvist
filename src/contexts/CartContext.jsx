@@ -4,7 +4,9 @@ const CartContext = createContext()
 
 export function CartProvider({ children }) {
 
+    //Array of the products in the cart
     const [cart, setCart] = useState([])
+    //CartItems is the total amount of products in the cart
     const [cartItems, setCartItems] = useState(0)
 
     const addToCart = (product, newQuantity) => {
@@ -32,12 +34,12 @@ export function CartProvider({ children }) {
         //Find the product's index
         const productIndex = cart.findIndex(item => item.id === product.id)
 
-        //If product doesn't exist, return
+        //If product doesn't exist, return early
         if (productIndex < 0) {
             return
         }
 
-        //If quantity to remove is greater than current quantity, remove product from cart
+        //If quantity to remove is greater than current quantity, remove product from cart entirely
         if (cart[productIndex].quantity - newQuantity <= 0) {
             //Create a new cart by filtering out the product to be removed
             const newCart = cart.filter(prod => prod.id !== product.id)
@@ -45,14 +47,14 @@ export function CartProvider({ children }) {
             return
         }
         
-        //IOtherwise, subtract the entered quantity
+        //Otherwise, subtract the provided quantity
         const newCart = [...cart]
         newCart[productIndex].quantity -= newQuantity
         updateCart(newCart)
     }
 
-    //Helper function that is equal to setCart(), 
-    //but will also update the cartItems array to reflect new quantity
+    //Helper function to be used instead of setCart.
+    //Updates the cart with the provided cart, and the cartItems to reflect quantity of products in the cart.
     function updateCart(newCart) {
         let newCartItems = 0
         for (let i = 0; i < newCart.length; i++) {
@@ -60,11 +62,6 @@ export function CartProvider({ children }) {
         }
         setCart(newCart)
         setCartItems(newCartItems)
-    }
-
-    function updateCartItems () {
-        //For each product in cart, add the quantity to the cartItems 
-        
     }
 
     return (
