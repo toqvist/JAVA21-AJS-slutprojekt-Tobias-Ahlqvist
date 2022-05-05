@@ -51,9 +51,7 @@ export default function Product({ product, addToCart, user }) {
                         </Select>
                         <Button onClick={() => addToCart(product, quantity.current)}
                             variant="contained"
-                            startIcon={<AddShoppingCartIcon />}
-
-                        >
+                            startIcon={<AddShoppingCartIcon />}>
                             Add to cart</Button>
                     </Container>
                 </CardActions>

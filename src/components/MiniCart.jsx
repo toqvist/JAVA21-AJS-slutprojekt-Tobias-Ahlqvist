@@ -12,6 +12,8 @@ import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close';
 import Card from '@mui/material/Card'
 
+//Displays all products in cart in a modal, button indicates total amount of products
+//Handles modal state for displaying cart
 export default function MiniCart() {
 
     const { cart, cartItems } = useContext(CartContext);

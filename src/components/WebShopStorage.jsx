@@ -5,11 +5,9 @@ import UserContext from '../contexts/UserContext';
 
 export default function WebShopStorage() {
 
-
     const { cart, updateCart } = useContext(CartContext)
     const { user, setUser } = useContext(UserContext)
 
-    
     const LOCAL_STORAGE_KEY_CART = 'WebShop.cart';
     const LOCAL_STORAGE_KEY_USER = 'WebShop.user';
 
@@ -24,7 +22,6 @@ export default function WebShopStorage() {
             updateCart(storedCart);
             
         }
-
     }, [])
 
     //When user or cart changes, save them to local storage
