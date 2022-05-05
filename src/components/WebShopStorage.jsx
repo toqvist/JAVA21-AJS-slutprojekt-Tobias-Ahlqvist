@@ -13,6 +13,8 @@ export default function WebShopStorage() {
     const LOCAL_STORAGE_KEY_CART = 'WebShop.cart';
     const LOCAL_STORAGE_KEY_USER = 'WebShop.user';
 
+    //When this components mounts (when the page loads), 
+    //load the cart and user from local storage if a user has previously been stored
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_CART));
         const storedUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_USER));
@@ -25,7 +27,7 @@ export default function WebShopStorage() {
 
     }, [])
 
-    
+    //When user or cart changes, save them to local storage
     useEffect(() => {
         if (user) {
             localStorage.setItem(LOCAL_STORAGE_KEY_USER, JSON.stringify(user))
@@ -36,6 +38,6 @@ export default function WebShopStorage() {
     }, [user, cart])
 
     return (
-        <span></span>
+        <></>
     )
 }
