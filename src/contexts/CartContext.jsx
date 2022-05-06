@@ -9,6 +9,8 @@ export function CartProvider({ children }) {
     //CartItems is the total amount of products in the cart
     const [cartItems, setCartItems] = useState(0)
 
+    const [totalPrice, setTotalPrice] = useState(0)
+
     const addToCart = (product, newQuantity) => {
 
         //Check if product with same id already exists
@@ -62,10 +64,20 @@ export function CartProvider({ children }) {
         }
         setCart(newCart)
         setCartItems(newCartItems)
+        getTotalPrice()
+    }
+
+    function getTotalPrice () {
+        let totalPrice = 0
+        for (let i = 0; i < cart.length; i++) {
+            totalPrice += cart[i].price * cart[i].quantity
+        }
+        // return totalPrice
+        setTotalPrice(totalPrice)
     }
 
     return (
-        <CartContext.Provider value={{ cart, cartItems, updateCart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, cartItems, updateCart, addToCart, removeFromCart, totalPrice }}>
             {children}
         </CartContext.Provider>
     )
