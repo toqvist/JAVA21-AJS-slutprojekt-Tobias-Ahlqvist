@@ -16,7 +16,7 @@ import Card from '@mui/material/Card'
 //Handles modal state for displaying cart
 export default function MiniCart() {
 
-    const { cart, cartItems } = useContext(CartContext);
+    const { cart, cartItems, totalPrice } = useContext(CartContext);
     const [modal, setModal] = useState(false);
 
     return (
@@ -34,7 +34,8 @@ export default function MiniCart() {
                     onClose={() => setModal(false)}>
                     <Card>
 
-                        <Box sx={{margin: '1rem 4rem', display: 'flex', justifyContent: 'flex-end'}}>
+                        <Box sx={{ margin: '1rem 4rem', display: 'flex', justifyContent: 'flex-end', gap: '10%' }}>
+                            <p>Total: €{totalPrice}</p>
                             <IconButton onClick={() => setModal(false)} >
                                 <CloseIcon></CloseIcon>
                             </IconButton>
@@ -44,9 +45,10 @@ export default function MiniCart() {
                                 <CartItem
                                     key={product.id}
                                     product={product}
-                                    />
+                                />
                             )}
                         </Box>
+                        
                     </Card>
 
                 </Modal>

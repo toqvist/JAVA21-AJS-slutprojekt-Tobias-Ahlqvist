@@ -14,7 +14,7 @@ export default function CartItem({ product }) {
         <Card variant="outlined" sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', pl: '5%', gap: '3%' }} >
 
             <img src={product.img} width="80px" />
-
+            <span>€{product.price}</span>
             <span>Quantity: </span>
 
             <IconButton onClick={() => removeFromCart(product, 1)}>
