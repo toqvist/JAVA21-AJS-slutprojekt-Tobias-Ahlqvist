@@ -42,7 +42,7 @@ function App() {
           <UserProvider>
             <WebShopStorage/>
 
-            <Router basename="/JAVA21-AJS-slutprojekt-Tobias-Ahlqvist/">
+            <Router basename="/WebShop/">
               
               <Nav />
 

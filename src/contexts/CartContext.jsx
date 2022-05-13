@@ -76,8 +76,14 @@ export function CartProvider({ children }) {
         setTotalPrice(totalPrice)
     }
 
+    function emptyCart () {
+        setCart([])
+        setCartItems(0)
+        setTotalPrice(0)
+    }
+
     return (
-        <CartContext.Provider value={{ cart, cartItems, updateCart, addToCart, removeFromCart, totalPrice }}>
+        <CartContext.Provider value={{ cart, cartItems, updateCart, addToCart, removeFromCart, totalPrice, emptyCart }}>
             {children}
         </CartContext.Provider>
     )
