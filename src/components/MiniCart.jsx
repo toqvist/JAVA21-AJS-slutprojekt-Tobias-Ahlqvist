@@ -5,7 +5,6 @@ import Button from '@mui/material/Button'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Modal from '@mui/material/Modal';
 
-import CartModal from './CartModal';
 import CartItem from './CartItem';
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -23,7 +22,7 @@ export default function MiniCart() {
         <>
             <Button variant="outlined"
                 onClick={() => setModal(true)}
-                startIcon={<ShoppingCartIcon></ShoppingCartIcon>}>
+                startIcon={<ShoppingCartIcon />}>
                 {cartItems}
             </Button>
 
@@ -37,7 +36,7 @@ export default function MiniCart() {
                         <Box sx={{ margin: '1rem 4rem', display: 'flex', justifyContent: 'flex-end', gap: '10%' }}>
                             <p>Total: €{totalPrice}</p>
                             <IconButton onClick={() => setModal(false)} >
-                                <CloseIcon></CloseIcon>
+                                <CloseIcon />
                             </IconButton>
                         </Box>
                         <Box>
@@ -48,7 +47,7 @@ export default function MiniCart() {
                                 />
                             )}
                         </Box>
-                        
+
                     </Card>
 
                 </Modal>
