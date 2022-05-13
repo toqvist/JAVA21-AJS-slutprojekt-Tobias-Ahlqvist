@@ -48,7 +48,7 @@ export function CartProvider({ children }) {
             updateCart(newCart)
             return
         }
-        
+
         //Otherwise, subtract the provided quantity
         const newCart = [...cart]
         newCart[productIndex].quantity -= newQuantity
@@ -57,6 +57,7 @@ export function CartProvider({ children }) {
 
     //Helper function to be used instead of setCart.
     //Updates the cart with the provided cart, and the cartItems to reflect quantity of products in the cart.
+    //Also updates the price total for the entire cart.
     function updateCart(newCart) {
         let newCartItems = 0
         for (let i = 0; i < newCart.length; i++) {
@@ -64,19 +65,20 @@ export function CartProvider({ children }) {
         }
         setCart(newCart)
         setCartItems(newCartItems)
-        getTotalPrice()
+        setTotalPrice(getTotalPrice(newCart))
     }
 
-    function getTotalPrice () {
+    //Takes a cart and returns the total price of all products in it.
+    function getTotalPrice(newCart) {
         let totalPrice = 0
-        for (let i = 0; i < cart.length; i++) {
-            totalPrice += cart[i].price * cart[i].quantity
+        for (let i = 0; i < newCart.length; i++) {
+            totalPrice += newCart[i].price * newCart[i].quantity
         }
-        // return totalPrice
-        setTotalPrice(totalPrice)
+        return totalPrice
+        
     }
 
-    function emptyCart () {
+    function emptyCart() {
         setCart([])
         setCartItems(0)
         setTotalPrice(0)
